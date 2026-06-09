@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soyam Slurp — Bakso & Mie Ayam</title>
+  <meta name="description" content="Soyam Slurp adalah web katalog UMKM bakso dan mie ayam dengan pengalaman mobile-first, interaktif, dan profesional." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            soyam: {
+              cream: '#FFF3D8',
+              broth: '#D87422',
+              chili: '#D7261E',
+              leaf: '#2E7D32',
+              ink: '#1B1714',
+              noodle: '#F8C94A'
+            }
+          },
+          fontFamily: {
+            display: ['ui-rounded', 'Nunito', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            warm: '0 24px 80px rgba(216,116,34,.25)',
+            card: '0 18px 50px rgba(27,23,20,.12)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-soyam-cream text-soyam-ink font-body overflow-x-hidden selection:bg-soyam-chili selection:text-white">
+
+  <div class="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,.9),transparent_32%),linear-gradient(180deg,#fff8e8,#fff0ce)]"></div>
+
+  <header class="fixed top-0 inset-x-0 z-50 px-3 pt-3">
+    <nav class="mx-auto max-w-6xl rounded-full border border-white/70 bg-white/75 backdrop-blur-xl shadow-card px-3 py-2 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-black tracking-tight">
+        <span class="grid place-items-center w-10 h-10 rounded-full bg-soyam-ink text-white shadow-lg">SS</span>
+        <span class="leading-tight">Soyam<br class="sm:hidden"><span class="text-soyam-broth"> Slurp</span></span>
+      </a>
+
+      <button id="menuBtn" class="md:hidden w-11 h-11 rounded-full bg-soyam-ink text-white grid place-items-center" aria-label="Buka menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <div id="navLinks" class="hidden md:flex items-center gap-1 text-sm font-bold">
+        <a class="nav-link" href="#cerita">Cerita</a>
+        <a class="nav-link" href="#menu">Menu</a>
+        <a class="nav-link" href="#rasa">Rasa</a>
+        <a class="nav-link bg-soyam-chili text-white hover:bg-soyam-chili/90" href="#lokasi">Lokasi</a>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden mx-auto mt-2 max-w-6xl rounded-3xl bg-white/90 backdrop-blur-xl border border-white shadow-card p-3">
+      <a class="mobile-link" href="#cerita">Cerita</a>
+      <a class="mobile-link" href="#menu">Menu</a>
+      <a class="mobile-link" href="#rasa">Rasa</a>
+      <a class="mobile-link" href="#lokasi">Lokasi</a>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <section id="home" class="min-h-screen pt-28 pb-16 px-4 flex items-center overflow-hidden">
+      <div class="mx-auto max-w-6xl grid lg:grid-cols-2 gap-10 items-center">
+        <div class="order-2 lg:order-1">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white/80 border border-white px-4 py-2 shadow-card text-sm font-extrabold">
+            <span class="w-2.5 h-2.5 bg-soyam-chili rounded-full animate-pulse"></span>
+            Bakso & Mie Ayam rumahan, rasa warung favorit.
+          </p>
+          <h1 class="mt-5 font-display text-5xl sm:text-6xl lg:text-7xl font-black leading-[.9] tracking-tight">
+            Semangkuk hangat yang bikin lidah bilang<br>
+            <span class="text-soyam-broth slurp-text">sluuurp!</span>
+          </h1>
+          <p class="mt-5 text-lg text-black/70 max-w-xl leading-relaxed">
+            Soyam Slurp menghadirkan katalog menu bakso dan mie ayam dengan cerita rasa: kuah gurih, mie kenyal, topping royal, dan tampilan detail yang bikin lapar sebelum berangkat ke warung.
+          </p>
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="#menu" class="btn-primary">Lihat Menu</a>
+            <a href="#cerita" class="btn-secondary">Kenali Soyam</a>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2 relative min-h-[440px] sm:min-h-[520px]">
+          <div class="hero-bowl" aria-hidden="true">
+            <div class="steam steam-1"></div>
+            <div class="steam steam-2"></div>
+            <div class="steam steam-3"></div>
+            <div class="broth-pour"></div>
+            <div class="rolling-meatball meatball-1"></div>
+            <div class="rolling-meatball meatball-2"></div>
+            <div class="bowl-inner">
+              <span class="noodle n1"></span>
+              <span class="noodle n2"></span>
+              <span class="noodle n3"></span>
+              <span class="leaf l1"></span>
+              <span class="leaf l2"></span>
+              <span class="meatball still s1"></span>
+              <span class="meatball still s2"></span>
+              <span class="meatball still s3"></span>
+            </div>
+            <div class="bowl-lip"></div>
+            <div class="bowl-base"></div>
+          </div>
+          <div class="floating-note top-16 left-2 rotate-[-8deg]">Kuah disiram panas 🔥</div>
+          <div class="floating-note bottom-20 right-0 rotate-[7deg]">Bakso rolling masuk mangkuk</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cerita" class="scroll-mt-28 px-4 py-16">
+      <div class="mx-auto max-w-6xl rounded-[2rem] bg-soyam-ink text-white overflow-hidden shadow-warm">
+        <div class="grid md:grid-cols-2">
+          <div class="p-7 sm:p-10 lg:p-12">
+            <p class="section-kicker text-soyam-noodle">CERITA SOYAM</p>
+            <h2 class="section-title text-white">Bukan cuma jualan. Ini pengalaman makan yang punya karakter.</h2>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              Soyam Slurp dibuat untuk UMKM yang ingin tampil lebih berani: katalog menu terasa hidup, visualnya kuat, dan tiap menu punya detail rasa yang jelas tanpa harus membuka fitur pemesanan.
+            </p>
+            <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+              <div class="mini-stat"><b>100%</b><span>Halal</span></div>
+              <div class="mini-stat"><b>Fresh</b><span>Harian</span></div>
+              <div class="mini-stat"><b>Mobile</b><span>First</span></div>
+            </div>
+          </div>
+          <div class="relative min-h-[320px] bg-[linear-gradient(135deg,#d87422,#f8c94a)] p-8 flex items-center justify-center">
+            <div class="taste-orbit">
+              <span>🍜</span><span>🌶️</span><span>🥬</span><span>🍥</span><span>🥢</span>
+              <strong>Soyam<br>Slurp</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="scroll-mt-28 px-4 py-16">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+          <div>
+            <p class="section-kicker text-soyam-broth">KATALOG MENU</p>
+            <h2 class="section-title">Pilih menu, buka detail, rasakan ceritanya.</h2>
+          </div>
+          <div class="flex gap-2 overflow-x-auto pb-1" id="filterBtns">
+            <button class="filter active" data-filter="all">Semua</button>
+            <button class="filter" data-filter="bakso">Bakso</button>
+            <button class="filter" data-filter="mie">Mie Ayam</button>
+            <button class="filter" data-filter="minum">Minuman</button>
+          </div>
+        </div>
+
+        <div id="menuGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      </div>
+    </section>
+
+    <section id="rasa" class="scroll-mt-28 px-4 py-16">
+      <div class="mx-auto max-w-6xl grid lg:grid-cols-[.9fr_1.1fr] gap-6 items-stretch">
+        <div class="rounded-[2rem] bg-white p-7 shadow-card border border-white">
+          <p class="section-kicker text-soyam-leaf">SIGNATURE</p>
+          <h2 class="section-title">Formula rasa yang mudah diingat pelanggan.</h2>
+          <p class="mt-4 text-black/65 leading-relaxed">Tiga kekuatan utama Soyam Slurp: kuah kaldu yang bersih, tekstur mie yang lentur, dan topping yang terasa niat.</p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <article class="taste-card"><span>01</span><b>Kuah Gurih</b><p>Kaldu hangat, ringan, tapi tetap punya badan rasa.</p></article>
+          <article class="taste-card"><span>02</span><b>Mie Kenyal</b><p>Tekstur mie tidak lembek dan cocok disiram kuah.</p></article>
+          <article class="taste-card"><span>03</span><b>Topping Royal</b><p>Bakso, ayam, pangsit, sawi, dan sambal jadi satu.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokasi" class="scroll-mt-28 px-4 py-16 pb-28">
+      <div class="mx-auto max-w-6xl rounded-[2rem] bg-white shadow-card border border-white p-7 sm:p-10">
+        <p class="section-kicker text-soyam-chili">DATANG KE WARUNG</p>
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="section-title">Lihat dulu menunya, lalu mampir saat lapar menyerang.</h2>
+            <p class="mt-4 text-black/65 leading-relaxed">Web ini dibuat sebagai etalase digital: pengunjung bisa melihat menu, komposisi, level rasa, dan detail — tanpa sistem order.</p>
+          </div>
+          <div class="rounded-3xl bg-soyam-ink text-white p-6">
+            <p class="font-black text-2xl">Soyam Slurp</p>
+            <p class="mt-2 text-white/70">Bakso & Mie Ayam</p>
+            <div class="mt-5 space-y-3 text-sm">
+              <p>📍 Alamat: Isi alamat warung di sini</p>
+              <p>🕘 Buka: 10.00 – 21.00 WIB</p>
+              <p>📱 Kontak: 08xx-xxxx-xxxx</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="fixed inset-0 z-[80] hidden items-end sm:items-center justify-center bg-black/55 backdrop-blur-sm p-3">
+    <div class="modal-panel w-full max-w-lg rounded-[2rem] bg-white overflow-hidden shadow-warm">
+      <div id="modalImage" class="h-52 relative overflow-hidden"></div>
+      <div class="p-6">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p id="modalTag" class="section-kicker text-soyam-broth"></p>
+            <h3 id="modalTitle" class="text-3xl font-black tracking-tight"></h3>
+          </div>
+          <button id="closeModal" class="w-11 h-11 rounded-full bg-soyam-ink text-white text-xl">×</button>
+        </div>
+        <p id="modalDesc" class="mt-4 text-black/65 leading-relaxed"></p>
+        <div id="modalMeta" class="mt-5 grid grid-cols-3 gap-3"></div>
+        <div class="mt-6 rounded-2xl bg-soyam-cream p-4 text-sm text-black/70">
+          <b class="text-soyam-ink">Catatan:</b> Website ini hanya untuk melihat detail menu. Pemesanan dilakukan langsung di warung Soyam Slurp.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
